@@ -2,7 +2,6 @@ import React, { createContext, useContext, useReducer } from 'react'
 import { faker } from '@faker-js/faker';
 
 import { CartReducer } from './Reducers';
-
 faker.seed(99)
 const Cart = createContext();
 
@@ -20,13 +19,15 @@ const products = [...Array(20)].map(() => ({
 export const Context = ({ children }) => {
   const [state, dispatch] = useReducer(CartReducer, {
     products,
-    cart: []
+    cart: [],
+    inputValue: "",
   })
-
+  // console.log(state.inputValue)
   return (
     <Cart.Provider value={{ state, dispatch }}>{children}</Cart.Provider>
   )
 }
+
 
 
 export const CartState = () => {

@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Ratings } from './Ratings'
 
 export const Filters = () => {
+  const [rating, setRating] = useState(3);
+
+  const handleRatingClick = (i) => setRating(i);
   return (
     <div className='filters'>
       <form action="" >
@@ -16,6 +20,7 @@ export const Filters = () => {
         <label htmlFor="">
           <input type="checkbox" id="" />Fast Delivery Only
         </label>
+        Ratings: <Ratings rating={rating} handleRatingClick={handleRatingClick} />
       </form>
     </div>
   )
