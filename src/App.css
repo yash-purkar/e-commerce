@@ -97,6 +97,15 @@
   cursor: pointer;
 }
 
+.out-of-stock {
+  padding: 5px;
+  background-color: #8ab2e4;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #fff;
+  letter-spacing: 1px;
+}
+
 p {
   margin-bottom: 1rem;
   font-size: 18px;

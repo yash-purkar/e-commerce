@@ -12,10 +12,10 @@ export const ProductCard = ({ product }) => {
       <p>{name}</p>
       <p>₹ {price}</p>
       <p>{fastDelivery ? "Fast Delivery" : "4 Days Delivery"}</p>
-      <p >Ratings <span className='card-ratings'><Ratings rating={ratings[0]} /></span></p>
+      <p >Ratings <span className='card-ratings'><Ratings rating={ratings} /></span></p>
 
       {
-        cart?.some(product => product.id === id) ? <button onClick={() => dispatch({ type: "REMOVE_FROM_CART", payload: product })} className='removeFromCart'>Remove From Cart</button> : <button className='addToCart' onClick={() => dispatch({ type: "ADD_TO_CART", payload: product })}>Add To Cart</button>
+        cart?.some(product => product.id === id) ? <button onClick={() => dispatch({ type: "REMOVE_FROM_CART", payload: product })} className='removeFromCart'>Remove From Cart</button> : inStock ? <button className='addToCart' onClick={() => dispatch({ type: "ADD_TO_CART", payload: product })}>Add To Cart</button> : <button className='out-of-stock'>OUT OF STOCK</button>
       }
     </>
   )

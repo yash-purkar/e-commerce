@@ -4,11 +4,12 @@ import { NavLink } from 'react-router-dom'
 import { CartState } from '../Contexts/Context'
 
 export const Header = () => {
-  const { state: { cart }, dispatch } = CartState()
+  const { state: { cart }, productDispatch } = CartState()
+
   return (
     <nav className='navbar'>
       <NavLink to="/" className="icon"><h1>Shopping Cart</h1></NavLink>
-      <input type="text" id='input-product' onChange={(e) => dispatch({ type: "SEARCH_VALUE", payload: e.target.value })} placeholder='Search an item' />
+      <input type="text" id='input-product' onChange={(e) => productDispatch({ type: "SEARCH_PRODUCT", payload: e.target.value })} placeholder='Search an item' />
 
       <div className='cart-items'>
         <NavLink to="/cart" className="icon">
