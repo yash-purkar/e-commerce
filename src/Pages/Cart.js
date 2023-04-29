@@ -20,7 +20,7 @@ export const Cart = () => {
             <img src={product.image} alt={product.name} className='product-img' />
             <p>{product.name}</p>
             <p>₹ {product.price}</p>
-            <select name="" id="" className='quantity_box' onChange={(e) => dispatch({ type: "CHANGE_QTY", payload: e.target.value, id: product.id })}>
+            <select name="" id="" className='quantity_box' onChange={(e) => dispatch({ type: "CHANGE_QTY", payload: e.target.value, id: product.id })} value={product.qty}>
               {
                 [...Array(5)].map((_, i) => {
                   return <option value={i + 1}>{i + 1}</option>
