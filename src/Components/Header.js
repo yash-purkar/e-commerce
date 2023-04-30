@@ -8,7 +8,7 @@ export const Header = () => {
 
   return (
     <nav className='navbar'>
-      <NavLink to="/" className="icon"><h1>Shopping Cart</h1></NavLink>
+      <NavLink to="/" className="icon"><h1>QuickDeal</h1></NavLink>
       <input type="text" id='input-product' onChange={(e) => productDispatch({ type: "SEARCH_PRODUCT", payload: e.target.value })} placeholder='Search an item' />
 
       <div className='cart-items'>
